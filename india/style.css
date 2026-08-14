@@ -5,6 +5,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;overflow:hidden;background:#0a0812;font-family:'Segoe UI','PingFang SC','Microsoft YaHei',system-ui,sans-serif;color:#fff;-webkit-font-smoothing:antialiased}
 canvas{display:block;position:fixed;top:0;left:0;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+.back-home{position:fixed;top:16px;left:20px;z-index:30;color:rgba(255,179,71,.5);text-decoration:none;font-size:.75rem;letter-spacing:.15em;transition:color .3s}
+.back-home:hover{color:#FFB347}
 
 /* ── Intro ── */
 #intro{position:fixed;inset:0;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;

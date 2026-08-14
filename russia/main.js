@@ -12,7 +12,7 @@ const CHARACTERS = {
     weapon: '极光晶剑',
     element: '冰霜 · 极光',
     faction: '中土守护者',
-    image: 'images/heroine.png'
+    image: 'images/heroine.jpg'
   },
   horse: {
     name: '神圣天马',
@@ -22,7 +22,7 @@ const CHARACTERS = {
     weapon: '极光双翼',
     element: '极光 · 银晶',
     faction: '上界神灵',
-    image: 'images/horse.png'
+    image: 'images/horse.jpg'
   },
   oluu: {
     name: '魔王 Oluu',
@@ -32,7 +32,7 @@ const CHARACTERS = {
     weapon: '雷霆战锤',
     element: '紫电 · 混沌',
     faction: '下界魔族',
-    image: 'images/oluu.png'
+    image: 'images/oluu.jpg'
   }
 };
 
