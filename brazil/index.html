@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0a0e0a">
+<title>自由之影 · 卡波耶拉 | 五洲匠汇</title>
+<meta name="description" content="巴西卡波耶拉战舞——光影流体雕塑，用指尖拨动粒子流，凝固自由之舞的瞬间">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none';">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥋</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="flowCanvas"></canvas>
+
+<a href="../" class="back-home" aria-label="返回五洲匠汇首页">← 五洲匠汇</a>
+
+<div class="ui-overlay">
+  <header class="title-area">
+    <p class="en">CAPOEIRA · SHADOW OF FREEDOM</p>
+    <h1>自由之影 · 卡波耶拉</h1>
+    <p class="desc">移动鼠标或手指，拨动粒子流，凝固战舞的光影瞬间</p>
+  </header>
+
+  <div class="controls">
+    <div class="ctrl-group">
+      <span class="ctrl-label">色彩</span>
+      <div class="color-modes" role="radiogroup" aria-label="色彩模式">
+        <button class="cm-btn active" data-mode="fire" aria-pressed="true">金火</button>
+        <button class="cm-btn" data-mode="forest" aria-pressed="false">森绿</button>
+        <button class="cm-btn" data-mode="ocean" aria-pressed="false">海蓝</button>
+      </div>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">动作</span>
+      <div class="preset-row">
+        <button class="p-btn" id="btnGinga" title="Ginga 基础摇摆">Ginga</button>
+        <button class="p-btn" id="btnAu" title="Au 手翻">Au</button>
+      </div>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">操作</span>
+      <div class="action-row">
+        <button class="a-btn" id="btnSound" aria-label="开关伯朗布琴音">🔊 琴音</button>
+        <button class="a-btn" id="btnExport" aria-label="导出图片">导出</button>
+        <button class="a-btn" id="btnClear" aria-label="清空画布">清空</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="info-panel">
+  <p>卡波耶拉（Capoeira）是巴西非裔黑奴将战舞与仪式融合的艺术，在 <em>roda</em>（圆圈）中以 ginga（摇摆）为根基，攻防如舞蹈。粒子流模拟身体在空间中留下的光影轨迹。</p>
+</div>
+
+<noscript><div class="noscript">此应用需要 JavaScript</div></noscript>
+
+<script src="main.js" defer></script>
+</body>
+</html>
