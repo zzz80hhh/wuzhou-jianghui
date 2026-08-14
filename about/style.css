@@ -1,0 +1,152 @@
+/* ═══════════════════════════════════════════
+   关于项目 — 样式表
+   ═══════════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0808;
+  --bg-card:rgba(255,255,255,.03);
+  --border:rgba(255,200,87,.12);
+  --gold:#FFC857;
+  --gold-bright:#FFE08A;
+  --text:#F5EED8;
+  --text-dim:rgba(245,238,216,.55);
+}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(255,180,50,.06) 0%,transparent 50%),
+    radial-gradient(ellipse at 50% 100%,rgba(180,120,40,.04) 0%,transparent 50%),
+    var(--bg);
+  color:var(--text);
+  font-family:'Segoe UI','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.8;
+  min-height:100vh;
+}
+
+.about-page{
+  max-width:860px;
+  margin:0 auto;
+  padding:80px 24px 60px;
+}
+
+/* ── Hero ── */
+.hero-section{
+  text-align:center;
+  padding:60px 0 50px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:50px;
+}
+.hero-en{
+  font-size:.7rem;letter-spacing:.5em;color:rgba(255,200,87,.4);
+  margin-bottom:16px;
+}
+.hero-section h1{
+  font-size:clamp(2rem,5vw,3rem);font-weight:300;letter-spacing:.2em;
+  color:var(--gold-bright);
+  text-shadow:0 0 60px rgba(255,200,87,.2);
+  padding-left:.2em;
+  margin-bottom:24px;
+}
+.hero-tagline{
+  font-size:1rem;color:var(--text-dim);max-width:560px;margin:0 auto;
+  line-height:2;
+}
+
+/* ── 内容区块 ── */
+.content-section{
+  margin-bottom:56px;
+}
+.content-section h2{
+  font-size:1.3rem;font-weight:400;letter-spacing:.15em;
+  color:var(--gold);
+  margin-bottom:20px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--border);
+}
+.content-section p{
+  color:var(--text-dim);
+  margin-bottom:14px;
+  font-size:.95rem;
+}
+.content-section strong{
+  color:var(--text);
+  font-weight:500;
+}
+
+/* ── IP 卡片网格 ── */
+.ip-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:16px;
+}
+.ip-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:24px 20px;
+  transition:border-color .3s,transform .3s;
+}
+.ip-card:hover{
+  border-color:rgba(255,200,87,.3);
+  transform:translateY(-2px);
+}
+.ip-flag{font-size:1.8rem;display:block;margin-bottom:10px}
+.ip-card h3{
+  font-size:1rem;font-weight:500;color:var(--gold-bright);
+  margin-bottom:4px;letter-spacing:.05em;
+}
+.ip-sub{
+  font-size:.72rem;color:rgba(255,200,87,.4);letter-spacing:.1em;
+  margin-bottom:10px!important;
+}
+.ip-card p{font-size:.82rem;line-height:1.7;margin:0}
+
+/* ── 公益承诺 ── */
+.pledge-box{
+  display:flex;align-items:center;gap:30px;
+  background:linear-gradient(135deg,rgba(255,200,87,.08),rgba(255,200,87,.02));
+  border:1px solid rgba(255,200,87,.2);
+  border-radius:16px;
+  padding:36px 40px;
+}
+.pledge-number{
+  font-size:4rem;font-weight:200;color:var(--gold-bright);
+  line-height:1;white-space:nowrap;
+  text-shadow:0 0 40px rgba(255,200,87,.3);
+}
+.pledge-text{font-size:.95rem!important;margin:0!important}
+
+/* ── 技术标签 ── */
+.tech-tags{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;
+}
+.tech-tags span{
+  padding:5px 14px;border-radius:20px;font-size:.75rem;
+  border:1px solid var(--border);
+  color:var(--text-dim);
+  background:rgba(255,255,255,.02);
+}
+.tech-note{font-size:.82rem!important;color:rgba(245,238,216,.35)!important}
+
+/* ── 页脚 ── */
+.about-footer{
+  text-align:center;padding:40px 0 20px;
+  border-top:1px solid var(--border);
+  margin-top:40px;
+}
+.about-footer p{
+  font-size:.8rem;color:rgba(255,200,87,.3);letter-spacing:.2em;
+}
+.footer-sub{
+  font-size:.7rem!important;color:rgba(245,238,216,.25)!important;
+  margin-top:6px!important;letter-spacing:.1em;
+}
+
+/* ── 响应式 ── */
+@media(max-width:600px){
+  .about-page{padding:60px 16px 40px}
+  .pledge-box{flex-direction:column;text-align:center;gap:16px;padding:28px 20px}
+  .pledge-number{font-size:3rem}
+  .ip-grid{grid-template-columns:1fr}
+}
