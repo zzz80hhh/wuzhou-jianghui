@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050a14">
+<title>极地三界 · 奥隆霍战神 | 五洲匠汇</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="frostCanvas"></canvas>
+
+<div class="back-nav">
+  <a href="../" class="back-link">← 五洲匠汇</a>
+</div>
+
+<header class="hero">
+  <p class="hero-en">OLONKHO · POLAR THREE REALMS</p>
+  <h1>极地三界 · 奥隆霍战神</h1>
+  <p class="hero-desc">
+    雅库特英雄史诗《奥隆霍》传唱千年——<br>
+    上界神灵、中土英雄、下界魔王，<br>
+    以赛博冰霜美学重铸三界神兽机甲。
+  </p>
+</header>
+
+<main class="showcase">
+
+  <nav class="char-tabs" role="tablist">
+    <button class="tab active" data-char="heroine" role="tab" aria-selected="true">
+      <span class="tab-realm">中土</span>
+      <span class="tab-name">英雄女</span>
+    </button>
+    <button class="tab" data-char="horse" role="tab" aria-selected="false">
+      <span class="tab-realm">上界</span>
+      <span class="tab-name">神圣天马</span>
+    </button>
+    <button class="tab" data-char="oluu" role="tab" aria-selected="false">
+      <span class="tab-realm">下界</span>
+      <span class="tab-name">魔王 Oluu</span>
+    </button>
+  </nav>
+
+  <section class="char-display">
+    <div class="char-image-wrap">
+      <img id="charImage" src="images/heroine.png" alt="英雄女概念图" class="char-image">
+      <div class="image-hint">点击查看大图</div>
+      <div class="loading-veil" id="loadingVeil"></div>
+    </div>
+
+    <aside class="char-info">
+      <div class="char-realm" id="charRealm">中土 · Middle World</div>
+      <h2 class="char-name" id="charName">英雄女</h2>
+      <p class="char-title" id="charTitle">中土守护者 · 极光剑姬</p>
+      <p class="char-desc" id="charDesc">
+        来自奥隆霍史诗中的中土英雄，身披冰晶铠甲，手持极光之剑，守护人间三界秩序。铠甲上的几何纹样源自雅库特传统图腾，每一道纹路都是先民与冰雪共生的印记。
+      </p>
+      <div class="char-meta">
+        <div class="meta-item">
+          <span class="meta-label">武器</span>
+          <span class="meta-value" id="charWeapon">极光晶剑</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">元素</span>
+          <span class="meta-value" id="charElement">冰霜 · 极光</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">势力</span>
+          <span class="meta-value" id="charFaction">中土守护者</span>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="关闭">✕</button>
+  <img id="lightboxImg" src="" alt="角色概念图大图">
+</div>
+
+<footer>
+  <p>极地三界 · 奥隆霍战神 · 五洲匠汇</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

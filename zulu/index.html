@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#1a0f08">
+<title>无字情书 · 祖鲁珠绣 — Zulu Love Letters</title>
+<meta property="og:title" content="无字情书 · 祖鲁珠绣 | 祖鲁珠绣密语创作器">
+<meta property="og:description" content="用色彩与几何编织你的无字情书——南非祖鲁珠绣非遗数字体验">
+<meta name="description" content="南非祖鲁珠绣交互创作器，用颜色密码和三角形符号编织无字情书">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+  <!-- 顶部标题 -->
+  <header id="topbar">
+    <div class="title-block">
+      <h1>无字情书</h1>
+      <p class="subtitle">ZULU LOVE LETTERS · 祖鲁珠绣密语</p>
+    </div>
+    <div class="topbar-actions">
+      <button class="tbtn" id="btnPreset" title="载入示例图案">示例</button>
+      <button class="tbtn" id="btnExport" title="导出为图片">导出</button>
+    </div>
+  </header>
+
+  <main id="workspace">
+    <!-- 珠绣画布区 -->
+    <section id="canvasArea">
+      <div id="canvasWrap">
+        <canvas id="beadCanvas"></canvas>
+        <div id="canvasHint">选择颜色，点击或拖动开始编织</div>
+      </div>
+      <div id="readingPanel">
+        <div class="reading-header">
+          <span class="reading-dot"></span>
+          <span>密语解读</span>
+        </div>
+        <div id="readingText">选择左侧颜色开始编织，你的珠绣情书将在此被解读……</div>
+        <div id="shapeTags"></div>
+      </div>
+    </section>
+
+    <!-- 控制面板 -->
+    <aside id="panel">
+      <!-- 颜色面板 -->
+      <div class="panel-section">
+        <h2>颜色密码</h2>
+        <div id="colorPalette"></div>
+        <div id="colorMeaning" class="color-meaning"></div>
+      </div>
+
+      <!-- 工具 -->
+      <div class="panel-section">
+        <h2>图形符号</h2>
+        <div id="toolPalette" class="tool-palette"></div>
+      </div>
+
+      <!-- 背景 -->
+      <div class="panel-section">
+        <h2>底色</h2>
+        <div id="bgSwitch" class="bg-switch">
+          <button class="bg-opt active" data-bg="white">白地</button>
+          <button class="bg-opt" data-bg="black">黑地</button>
+          <button class="bg-opt" data-bg="none">透明</button>
+        </div>
+      </div>
+
+      <!-- 操作 -->
+      <div class="panel-section">
+        <h2>操作</h2>
+        <div class="action-row">
+          <button class="abtn" id="btnUndo">撤销</button>
+          <button class="abtn danger" id="btnClear">清空</button>
+        </div>
+      </div>
+
+      <!-- 文化注脚 -->
+      <div class="panel-section cultural-note">
+        <h2>关于祖鲁珠绣</h2>
+        <p>在南非祖鲁文化中，珠绣是女性传递心意的"无字情书"（<em>incwadi yothando</em>）。颜色有正反之义，三角形指向诉说身份——正三角为未婚女子，倒三角为未婚男子，双三角相合为婚姻。</p>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

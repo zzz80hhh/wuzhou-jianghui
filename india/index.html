@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#050510">
+<title>音频共振 · 宇宙几何 — Vedic Resonance</title>
+<!-- 微信/社交分享 -->
+<meta property="og:title" content="音频共振 · 宇宙几何 | 吠陀吟诵可视化">
+<meta property="og:description" content="将千年吠陀吟诵转化为随音跳动的宇宙曼陀罗，非遗数字藏品">
+<meta property="og:type" content="website">
+<meta name="description" content="吠陀吟诵音频可视化，实时生成神圣几何曼陀罗，非遗数字藏品体验">
+<meta name="keywords" content="吠陀,吟诵,音频可视化,曼陀罗,数字藏品,非遗,Sri Yantra">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div id="watermark">VEDIC RESONANCE</div>
+
+<div id="intro">
+  <div class="mandala-deco"><div class="dot"></div></div>
+  <h1>音频共振 · 宇宙几何</h1>
+  <p class="subtitle">VEDIC RESONANCE · MANTRA MANDALA</p>
+  <div id="dropzone" tabindex="0" role="button" aria-label="选择或拖拽音频文件">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB347" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" />
+    </svg>
+    <p>拖拽音频文件到此处</p>
+    <p class="or">或点击选择 MP3 / WAV / FLAC</p>
+  </div>
+  <input type="file" id="fileInput" accept="audio/*" hidden>
+  <p class="hint">建议使用吠陀吟诵等持续型音乐 · 佩戴耳机体验更佳<br>支持实时录制导出视频</p>
+</div>
+
+<div id="recIndicator" class="hidden" aria-live="polite">
+  <span class="rec-dot"></span> REC <span id="recTime">00:00</span>
+</div>
+
+<div id="player" class="hidden">
+  <div class="progress-wrap"><div id="progress"></div></div>
+  <div class="player-row">
+    <button class="ctrl" id="btnPlay" aria-label="播放或暂停">⏸</button>
+    <span id="timeDisplay">0:00 / 0:00</span>
+    <div class="spacer"></div>
+    <button class="ctrl rec" id="btnRecord" aria-label="录制视频" title="录制视频">●</button>
+    <button class="ctrl sym" id="btnSym" aria-label="切换对称数">☸ 对称 8</button>
+    <button class="ctrl" id="btnNew" aria-label="选择新文件" title="选择新文件">♪</button>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

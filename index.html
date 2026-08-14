@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0806">
+<title>五洲匠汇 · 金砖非遗数字藏品</title>
+<meta property="og:title" content="五洲匠汇 · 金砖非遗数字藏品">
+<meta property="og:description" content="让金砖非遗在数字时代被看见、被收藏、被传承">
+<meta name="description" content="五洲匠汇——金砖五国非物质文化遗产数字藏品平台">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0806;--bg2:#14100a;--card:#1a140c;--card-hover:#221a10;
+  --gold:#DAA552;--gold-bright:#F0C878;--gold-dim:rgba(218,165,82,.4);
+  --text:#F5E6D0;--text-dim:rgba(245,230,208,.5);--border:rgba(218,165,82,.15);
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);font-family:'Segoe UI','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 15% 10%,rgba(192,57,43,.07) 0%,transparent 45%),
+    radial-gradient(ellipse at 85% 80%,rgba(30,64,175,.06) 0%,transparent 45%),
+    radial-gradient(ellipse at 50% 50%,rgba(218,165,82,.03) 0%,transparent 60%);
+}
+
+/* ── Hero ── */
+.hero{
+  position:relative;z-index:1;text-align:center;padding:100px 24px 60px;
+}
+.hero-ornament{
+  width:64px;height:64px;margin:0 auto 28px;border:1px solid var(--gold-dim);
+  border-radius:50%;position:relative;animation:spin 60s linear infinite;
+}
+.hero-ornament::before,.hero-ornament::after{
+  content:'';position:absolute;border-radius:50%;border:1px solid rgba(218,165,82,.2);
+}
+.hero-ornament::before{inset:10px;animation:spin 40s linear infinite reverse}
+.hero-ornament::after{inset:22px;animation:spin 25s linear infinite}
+.hero-ornament .dot{
+  position:absolute;top:50%;left:50%;width:6px;height:6px;background:var(--gold);
+  border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 16px var(--gold);
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero h1{
+  font-size:clamp(2rem,5vw,3.2rem);font-weight:300;letter-spacing:.4em;
+  color:var(--gold-bright);text-shadow:0 0 60px rgba(218,165,82,.25);
+  margin-bottom:16px;padding-left:.4em;
+}
+.hero .en{
+  font-size:.72rem;letter-spacing:.5em;color:var(--gold-dim);
+  margin-bottom:28px;padding-left:.5em;
+}
+.hero .tagline{
+  font-size:1rem;line-height:2;color:var(--text-dim);max-width:560px;
+  margin:0 auto;letter-spacing:.05em;
+}
+.hero .tagline em{color:var(--gold-bright);font-style:normal}
+
+/* ── 项目网格 ── */
+.grid{
+  position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:20px 24px 80px;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;
+}
+.card{
+  position:relative;display:block;padding:32px 28px;border-radius:14px;
+  background:linear-gradient(145deg,var(--card),var(--bg2));
+  border:1px solid var(--border);text-decoration:none;color:inherit;
+  transition:all .35s cubic-bezier(.2,.8,.2,1);overflow:hidden;
+}
+.card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0;transition:opacity .35s;
+}
+.card:not(.soon):hover{
+  transform:translateY(-4px);border-color:rgba(218,165,82,.4);
+  box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 30px rgba(218,165,82,.08);
+  background:linear-gradient(145deg,var(--card-hover),var(--card));
+}
+.card:not(.soon):hover::before{opacity:1}
+.card.soon{opacity:.55;cursor:default}
+.card-country{
+  font-size:.7rem;letter-spacing:.3em;color:var(--gold);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.card-country .flag{font-size:1.1rem}
+.card-title{
+  font-size:1.25rem;font-weight:400;letter-spacing:.12em;color:var(--gold-bright);
+  margin-bottom:10px;
+}
+.card-desc{
+  font-size:.82rem;line-height:1.8;color:var(--text-dim);margin-bottom:20px;
+}
+.card-status{
+  display:inline-flex;align-items:center;gap:6px;font-size:.7rem;letter-spacing:.15em;
+  padding:5px 14px;border-radius:20px;
+}
+.card-status.live{
+  background:rgba(218,165,82,.12);color:var(--gold-bright);
+  border:1px solid rgba(218,165,82,.3);
+}
+.card-status.live::before{
+  content:'';width:6px;height:6px;border-radius:50%;background:var(--gold-bright);
+  box-shadow:0 0 8px var(--gold-bright);animation:pulse 2s infinite;
+}
+.card-status.soon{
+  background:rgba(255,255,255,.04);color:var(--text-dim);
+  border:1px solid rgba(255,255,255,.08);
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.card-arrow{
+  position:absolute;right:24px;bottom:28px;font-size:1.2rem;color:var(--gold-dim);
+  transition:all .3s;opacity:0;
+}
+.card:not(.soon):hover .card-arrow{opacity:1;transform:translateX(4px);color:var(--gold-bright)}
+
+/* ── 公益宣言 ── */
+.pledge{
+  position:relative;z-index:1;max-width:680px;margin:0 auto;padding:40px 24px 80px;text-align:center;
+}
+.pledge-line{
+  width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);
+  margin:0 auto 28px;
+}
+.pledge p{
+  font-size:.88rem;line-height:2;color:var(--text-dim);letter-spacing:.04em;
+}
+.pledge p em{color:var(--gold-bright);font-style:normal}
+
+/* ── 页脚 ── */
+footer{
+  position:relative;z-index:1;text-align:center;padding:30px 24px 40px;
+  border-top:1px solid var(--border);
+}
+footer p{font-size:.68rem;letter-spacing:.25em;color:rgba(245,230,208,.25)}
+
+/* ── 响应式 ── */
+@media(max-width:640px){
+  .hero{padding:70px 20px 40px}
+  .grid{padding:10px 16px 50px;gap:14px;grid-template-columns:1fr}
+  .card{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-ornament"><div class="dot"></div></div>
+  <h1>五洲匠汇</h1>
+  <p class="en">FIVE CONTINENTS · HERITAGE RESONANCE</p>
+  <p class="tagline">
+    以数字技术唤醒<em>金砖五国</em>的非物质文化遗产——<br>
+    让每一种古老文明，在数字时代<em>被看见、被收藏、被传承</em>。
+  </p>
+</section>
+
+<section class="grid">
+
+  <a class="card" href="india/">
+    <div class="card-country"><span class="flag">🇮🇳</span> 印度 · INDIA</div>
+    <h2 class="card-title">音频共振 · 宇宙几何</h2>
+    <p class="card-desc">将三千年吠陀吟诵的声纹，实时转化为随音跳动的宇宙曼陀罗——听见宇宙的几何。</p>
+    <span class="card-status live">进入体验</span>
+    <span class="card-arrow">→</span>
+  </a>
+
+  <a class="card" href="zulu/">
+    <div class="card-country"><span class="flag">🇿🇦</span> 南非 · SOUTH AFRICA</div>
+    <h2 class="card-title">无字情书 · 祖鲁珠绣</h2>
+    <p class="card-desc">用色彩与三角形编织祖鲁女性的"无字情书"，每颗珠子都是一句密语。</p>
+    <span class="card-status live">进入体验</span>
+    <span class="card-arrow">→</span>
+  </a>
+
+  <a class="card" href="russia/">
+    <div class="card-country"><span class="flag">🇷🇺</span> 俄罗斯 · RUSSIA</div>
+    <h2 class="card-title">极地三界 · 奥隆霍</h2>
+    <p class="card-desc">西伯利亚冰原上的英雄史诗，赛博冰霜美学重铸三界神兽机甲。</p>
+    <span class="card-status live">进入体验</span>
+    <span class="card-arrow">→</span>
+  </a>
+
+  <div class="card soon">
+    <div class="card-country"><span class="flag">🇧🇷</span> 巴西 · BRAZIL</div>
+    <h2 class="card-title">自由之影 · 卡波耶拉</h2>
+    <p class="card-desc">黑奴争取自由的战舞，动捕凝固为光影流体雕塑。</p>
+    <span class="card-status soon">即将推出</span>
+  </div>
+
+  <a class="card" href="https://4ktyj09crz99a.feishuapp.com/app/app_17bzq8pfve2" target="_blank" rel="noopener">
+    <div class="card-country"><span class="flag">🇨🇳</span> 中国 · CHINA</div>
+    <h2 class="card-title">活态星历 · 水书</h2>
+    <p class="card-desc">水族象形文字从羊皮纸解构重组，化作神兽与星空轨迹。</p>
+    <span class="card-status live">进入体验</span>
+    <span class="card-arrow">↗</span>
+  </a>
+
+</section>
+
+<section class="pledge">
+  <div class="pledge-line"></div>
+  <p>
+    本项目数藏发行收益的<em>10%</em>将通过联合国教科文组织（UNESCO）相关基金，<br>
+    定向捐赠给金砖国家非遗传承人社区。<br>
+    这不仅是数字收藏，更是一场<em>跨越国界的文明对话</em>。
+  </p>
+</section>
+
+<footer>
+  <p>五洲匠汇 · FIVE CONTINENTS HERITAGE RESONANCE</p>
+</footer>
+
+</body>
+</html>
